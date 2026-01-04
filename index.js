@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+import fs from "fs";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -14,20 +14,10 @@ app.use(express.json());
 
 // Demo API
 app.get("/api/posts", (req, res) => {
-  res.json([
-    {
-      id: 1,
-      title: "React Basics",
-      description: "Learn React fundamentals",
-      date: "2026-01-01"
-    },
-    {
-      id: 2,
-      title: "Vite + Vercel",
-      description: "Deploy React apps easily",
-      date: "2026-01-03"
-    }
-  ]);
+const posts = JSON.parse(
+    fs.readFileSync("./data/posts.json", "utf-8")
+  );
+  res.json(posts);
 });
 
 app.get("/", (req, res) => {
