@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for my MERN projects",
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "bootstrap"
+  ],
+  "license": "ISC",
+  "author": "Srinivasan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1",
+    "nodemon": "^3.1.11"
+  }
+}
